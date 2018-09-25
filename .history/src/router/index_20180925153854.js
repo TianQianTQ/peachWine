@@ -14,9 +14,9 @@ export default new Router({
       component: HelloWorld
     },
     {
-      path: '/d3/forceDirectedGraphr',
-      name: 'forceDirectedGraphr',
-      component: forceDirectedGraph
+    	path: '/d3/forceDirectedGraphr',
+    	name: 'forceDirectedGraphr',
+    	component: forceDirectedGraph
     }
   ]
 })
