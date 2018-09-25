@@ -16,7 +16,6 @@
     "docs:build": "vuepress build docs"
   },
   "dependencies": {
-    "d3": "4.10.0",
     "d3.js": "^0.0.2-security",
     "scss": "^0.2.4",
     "vue": "^2.5.2",
@@ -42,6 +41,8 @@
     "copy-webpack-plugin": "^4.0.1",
     "cross-spawn": "^5.0.1",
     "css-loader": "^0.28.0",
+    "d3": "^4.10.0",
+    "echarts": "^4.2.0-rc.1",
     "eslint": "^4.15.0",
     "eslint-config-standard": "^10.2.1",
     "eslint-friendly-formatter": "^3.0.0",

@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 
 import forceDirectedGraph from '@/pages/d3/forceDirectedGraph/index'
+import index from '@/pages/echarts/index/index'
 
 Vue.use(Router)
 
@@ -17,6 +18,11 @@ export default new Router({
       path: '/d3/forceDirectedGraphr',
       name: 'forceDirectedGraphr',
       component: forceDirectedGraph
+    },
+    {
+      path: '/echarts/index',
+      name: 'index',
+      component: index
     }
   ]
 })
