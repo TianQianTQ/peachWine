@@ -27,8 +27,8 @@ export default new Router({
       component: index
     },
     {
-      path: '/drag/index',
-      name: 'drag',
+      path:'/drag/index',
+      name:'drag',
       component: drag
     }
   ]
