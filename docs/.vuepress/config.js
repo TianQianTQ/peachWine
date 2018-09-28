@@ -19,7 +19,6 @@ module.exports = {
         title:'home',
         children: [
           '/home/',
-          '/home/abc/'
         ]
       },{
         title:'MarkDown',
@@ -27,9 +26,14 @@ module.exports = {
           '/MarkDown/',
         ]
       },{
-        title:'native',
+        title:'Vue相关',
         children:[
-          '/native/'
+          '/vue/drag/',
+        ]
+      },{
+        title:'D3.js基础',
+        children:[
+          '/d3v5/',
         ]
       }
     ],

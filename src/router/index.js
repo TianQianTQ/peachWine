@@ -5,7 +5,7 @@ import HelloWorld from '@/components/HelloWorld'
 import forceDirectedGraph from '@/pages/d3/forceDirectedGraph/index'
 import index from '@/pages/echarts/index/index'
 
-import drag from '@/pages/drag/index'
+import drag from '@/pages/drag/drag'
 
 Vue.use(Router)
 
@@ -27,7 +27,7 @@ export default new Router({
       component: index
     },
     {
-      path: '/drag/index',
+      path: '/drag',
       name: 'drag',
       component: drag
     }
