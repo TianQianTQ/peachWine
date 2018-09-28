@@ -17,19 +17,10 @@ module.exports = {
     sidebar: [
       {
         title:'home',
+        collapsable: false,
         children: [
-          '/home/',
-          '/home/abc/'
-        ]
-      },{
-        title:'MarkDown',
-        children: [
-          '/MarkDown/',
-        ]
-      },{
-        title:'native',
-        children:[
-          '/native/'
+          '/',
+          '/index'
         ]
       }
     ],

@@ -7,33 +7,13 @@ module.exports = {
       { text: '博客', link:'https://blog.csdn.net/t_tq_bnsg_bs_ll'}
     ],
     // sidebar: 'auto',    // 自动匹配当前侧边栏---
-    // sidebar: [
-    //   ['/home/', '介绍'],
-    //   ['/d3v5/', 'd3.jsV5版本入门'],
-    //   ['/MarkDown/', 'MarkDown基本语法'],
-    //   ['/audition/', '前端面试'],
-    //   ['/native/', 'js原生方法'],
-    // ],    // 后续重新配置多个文件的侧边栏
     sidebar: [
-      {
-        title:'home',
-        children: [
-          '/home/',
-          '/home/abc/'
-        ]
-      },{
-        title:'MarkDown',
-        children: [
-          '/MarkDown/',
-        ]
-      },{
-        title:'native',
-        children:[
-          '/native/'
-        ]
-      }
-    ],
-
+      ['/home/', '介绍'],
+      ['/d3v5/', 'd3.jsV5版本入门'],
+      ['/MarkDown/', 'MarkDown基本语法'],
+      ['/audition/', '前端面试'],
+      ['/native/', 'js原生方法'],
+    ],    // 后续重新配置多个文件的侧边栏
      sidebarDepth: 2,   // 设置嵌套的标题链接深度\
     // displayAllHeaders: true, // 默认值：false  设置所有页面的标题链接
     lastUpdated: 'Last Updated',   // 最后更新时间  --基于git

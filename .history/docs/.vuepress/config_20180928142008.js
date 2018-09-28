@@ -18,18 +18,20 @@ module.exports = {
       {
         title:'home',
         children: [
-          '/home/',
-          '/home/abc/'
+          '/',
         ]
       },{
         title:'MarkDown',
         children: [
-          '/MarkDown/',
+          '/MarkDown/README.md',
+          '/MarkDown/one.md',
+          '/MarkDown/two.md'
         ]
       },{
-        title:'native',
+        title:'js',
         children:[
-          '/native/'
+          '/',
+          '/HTML'
         ]
       }
     ],

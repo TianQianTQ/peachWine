@@ -18,18 +18,21 @@ module.exports = {
       {
         title:'home',
         children: [
-          '/home/',
-          '/home/abc/'
+          '/',
+          '/index'
         ]
       },{
         title:'MarkDown',
         children: [
-          '/MarkDown/',
+          '/',
+          '/one',
+          '/two'
         ]
       },{
-        title:'native',
+        title:'js',
         children:[
-          '/native/'
+          '/interview/',
+          '/interview/HTML'
         ]
       }
     ],

@@ -27,9 +27,9 @@ module.exports = {
           '/MarkDown/',
         ]
       },{
-        title:'native',
+        title:'js',
         children:[
-          '/native/'
+          '/'
         ]
       }
     ],
