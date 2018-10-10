@@ -35,6 +35,12 @@ module.exports = {
         children:[
           '/d3v5/',
         ]
+      },{
+        title:'ECMAScript',
+        children:[
+          '/ECMAScript/ES7/',
+          '/ECMAScript/ES8/'
+        ]
       }
     ],
 
