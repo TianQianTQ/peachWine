@@ -33,7 +33,9 @@ export default new Router({
     }
   ]
 })
-let obj = {a: 1, b: 2, c: 3}
-Object.keys(obj).forEach((key) => {
-  console.log(obj[key])
-})
+console.log('abc'.padStart(10))
+console.log('abcdef'.padStart(10))
+//        abc
+//     abcdef
+console.log('0.00'.padEnd(20) + '0.00')
+console.log('10,000.00'.padEnd(20) + '10,000.00')
