@@ -39,3 +39,5 @@ console.log('abcdef'.padStart(10))
 //     abcdef
 console.log('0.00'.padEnd(20) + '0.00')
 console.log('10,000.00'.padEnd(20) + '10,000.00')
+// 0.00                0.00
+// 10,000.00           10,000.00
