@@ -6,6 +6,9 @@ import forceDirectedGraph from '@/pages/d3/forceDirectedGraph/index'
 import index from '@/pages/echarts/index/index'
 
 import drag from '@/pages/drag/drag'
+import jsPlumb from '@/pages/jsPlumb/index'
+import flow from '@/pages/jsPlumb/flow'
+import feng from '@/pages/jsPlumb/feng'
 
 Vue.use(Router)
 
@@ -30,14 +33,21 @@ export default new Router({
       path: '/drag',
       name: 'drag',
       component: drag
+    },
+    {
+      path: '/jsplumb/index',
+      name: 'jsplumb',
+      component: jsPlumb
+    },
+    {
+      path: '/jsplumb/flow',
+      name: 'flow',
+      component: flow
+    },
+    {
+      path: '/jsplumb/feng',
+      name: 'feng',
+      component: feng
     }
   ]
 })
-console.log('abc'.padStart(10))
-console.log('abcdef'.padStart(10))
-//        abc
-//     abcdef
-console.log('0.00'.padEnd(20) + '0.00')
-console.log('10,000.00'.padEnd(20) + '10,000.00')
-// 0.00                0.00
-// 10,000.00           10,000.00

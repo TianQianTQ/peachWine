@@ -1926,18 +1926,16 @@ css-color-names@0.0.4:
   version "0.0.4"
   resolved "http://registry.npm.360es.cn/css-color-names/download/css-color-names-0.0.4.tgz#808adc2e79cf84738069b646cb20ec27beb629e0"
 
-css-loader@^0.28.0:
-  version "0.28.11"
-  resolved "http://registry.npm.360es.cn/css-loader/download/css-loader-0.28.11.tgz#c3f9864a700be2711bb5a2462b2389b1a392dab7"
+css-loader@^1.0.1:
+  version "1.0.1"
+  resolved "http://registry.npm.360es.cn/css-loader/download/css-loader-1.0.1.tgz#6885bb5233b35ec47b006057da01cc640b6b79fe"
   dependencies:
     babel-code-frame "^6.26.0"
     css-selector-tokenizer "^0.7.0"
-    cssnano "^3.10.0"
     icss-utils "^2.1.0"
     loader-utils "^1.0.2"
-    lodash.camelcase "^4.3.0"
-    object-assign "^4.1.1"
-    postcss "^5.0.6"
+    lodash "^4.17.11"
+    postcss "^6.0.23"
     postcss-modules-extract-imports "^1.2.0"
     postcss-modules-local-by-default "^1.2.0"
     postcss-modules-scope "^1.1.0"
@@ -1970,7 +1968,7 @@ cssesc@^0.1.0:
   version "0.1.0"
   resolved "http://registry.npm.360es.cn/cssesc/download/cssesc-0.1.0.tgz#c814903e45623371a0477b40109aaafbeeaddbb4"
 
-cssnano@^3.10.0, cssnano@^3.4.0:
+cssnano@^3.4.0:
   version "3.10.0"
   resolved "http://registry.npm.360es.cn/cssnano/download/cssnano-3.10.0.tgz#4f38f6cea2b9b17fa01490f23f1dc68ea65c1c38"
   dependencies:
@@ -2042,9 +2040,9 @@ d3-array@1, d3-array@^1.2.0:
   version "1.2.4"
   resolved "http://registry.npm.360es.cn/d3-array/download/d3-array-1.2.4.tgz#635ce4d5eea759f6f605863dbcfc30edc737f71f"
 
-d3-array@1.2.0:
-  version "1.2.0"
-  resolved "http://registry.npm.360es.cn/d3-array/download/d3-array-1.2.0.tgz#147d269720e174c4057a7f42be8b0f3f2ba53108"
+d3-array@1.2.1:
+  version "1.2.1"
+  resolved "http://registry.npm.360es.cn/d3-array/download/d3-array-1.2.1.tgz#d1ca33de2f6ac31efadb8e050a021d7e2396d5dc"
 
 d3-axis@1.0.8:
   version "1.0.8"
@@ -2098,9 +2096,9 @@ d3-drag@1:
     d3-dispatch "1"
     d3-selection "1"
 
-d3-drag@1.1.1:
-  version "1.1.1"
-  resolved "http://registry.npm.360es.cn/d3-drag/download/d3-drag-1.1.1.tgz#b5155304433b18ba38726b2184d0098e820dc64b"
+d3-drag@1.2.1:
+  version "1.2.1"
+  resolved "http://registry.npm.360es.cn/d3-drag/download/d3-drag-1.2.1.tgz#df8dd4c502fb490fc7462046a8ad98a5c479282d"
   dependencies:
     d3-dispatch "1"
     d3-selection "1"
@@ -2113,9 +2111,9 @@ d3-dsv@1:
     iconv-lite "0.4"
     rw "1"
 
-d3-dsv@1.0.5:
-  version "1.0.5"
-  resolved "http://registry.npm.360es.cn/d3-dsv/download/d3-dsv-1.0.5.tgz#419f7db47f628789fc3fdb636e678449d0821136"
+d3-dsv@1.0.8:
+  version "1.0.8"
+  resolved "http://registry.npm.360es.cn/d3-dsv/download/d3-dsv-1.0.8.tgz#907e240d57b386618dc56468bacfe76bf19764ae"
   dependencies:
     commander "2"
     iconv-lite "0.4"
@@ -2129,9 +2127,9 @@ d3-ease@1.0.3:
   version "1.0.3"
   resolved "http://registry.npm.360es.cn/d3-ease/download/d3-ease-1.0.3.tgz#68bfbc349338a380c44d8acc4fbc3304aa2d8c0e"
 
-d3-force@1.0.6:
-  version "1.0.6"
-  resolved "http://registry.npm.360es.cn/d3-force/download/d3-force-1.0.6.tgz#ea7e1b7730e2664cd314f594d6718c57cc132b79"
+d3-force@1.1.0:
+  version "1.1.0"
+  resolved "http://registry.npm.360es.cn/d3-force/download/d3-force-1.1.0.tgz#cebf3c694f1078fcc3d4daf8e567b2fbd70d4ea3"
   dependencies:
     d3-collection "1"
     d3-dispatch "1"
@@ -2142,13 +2140,13 @@ d3-format@1:
   version "1.3.2"
   resolved "http://registry.npm.360es.cn/d3-format/download/d3-format-1.3.2.tgz#6a96b5e31bcb98122a30863f7d92365c00603562"
 
-d3-format@1.2.0:
-  version "1.2.0"
-  resolved "http://registry.npm.360es.cn/d3-format/download/d3-format-1.2.0.tgz#6b480baa886885d4651dc248a8f4ac9da16db07a"
+d3-format@1.2.2:
+  version "1.2.2"
+  resolved "http://registry.npm.360es.cn/d3-format/download/d3-format-1.2.2.tgz#1a39c479c8a57fe5051b2e67a3bee27061a74e7a"
 
-d3-geo@1.6.4:
-  version "1.6.4"
-  resolved "http://registry.npm.360es.cn/d3-geo/download/d3-geo-1.6.4.tgz#f20e1e461cb1845f5a8be55ab6f876542a7e3199"
+d3-geo@1.9.1:
+  version "1.9.1"
+  resolved "http://registry.npm.360es.cn/d3-geo/download/d3-geo-1.9.1.tgz#157e3b0f917379d0f73bebfff3be537f49fa7356"
   dependencies:
     d3-array "1"
 
@@ -2162,9 +2160,9 @@ d3-interpolate@1:
   dependencies:
     d3-color "1"
 
-d3-interpolate@1.1.5:
-  version "1.1.5"
-  resolved "http://registry.npm.360es.cn/d3-interpolate/download/d3-interpolate-1.1.5.tgz#69e099ff39214716e563c9aec3ea9d1ea4b8a79f"
+d3-interpolate@1.1.6:
+  version "1.1.6"
+  resolved "http://registry.npm.360es.cn/d3-interpolate/download/d3-interpolate-1.1.6.tgz#2cf395ae2381804df08aa1bf766b7f97b5f68fb6"
   dependencies:
     d3-color "1"
 
@@ -2196,18 +2194,18 @@ d3-random@1.1.0:
   version "1.1.0"
   resolved "http://registry.npm.360es.cn/d3-random/download/d3-random-1.1.0.tgz#6642e506c6fa3a648595d2b2469788a8d12529d3"
 
-d3-request@1.0.5:
-  version "1.0.5"
-  resolved "http://registry.npm.360es.cn/d3-request/download/d3-request-1.0.5.tgz#4daae946d1dd0d57dfe01f022956354958d51f23"
+d3-request@1.0.6:
+  version "1.0.6"
+  resolved "http://registry.npm.360es.cn/d3-request/download/d3-request-1.0.6.tgz#a1044a9ef4ec28c824171c9379fae6d79474b19f"
   dependencies:
     d3-collection "1"
     d3-dispatch "1"
     d3-dsv "1"
     xmlhttprequest "1"
 
-d3-scale@1.0.6:
-  version "1.0.6"
-  resolved "http://registry.npm.360es.cn/d3-scale/download/d3-scale-1.0.6.tgz#bce19da80d3a0cf422c9543ae3322086220b34ed"
+d3-scale@1.0.7:
+  version "1.0.7"
+  resolved "http://registry.npm.360es.cn/d3-scale/download/d3-scale-1.0.7.tgz#fa90324b3ea8a776422bd0472afab0b252a0945d"
   dependencies:
     d3-array "^1.2.0"
     d3-collection "1"
@@ -2221,9 +2219,9 @@ d3-selection@1, d3-selection@^1.1.0:
   version "1.3.2"
   resolved "http://registry.npm.360es.cn/d3-selection/download/d3-selection-1.3.2.tgz#6e70a9df60801c8af28ac24d10072d82cbfdf652"
 
-d3-selection@1.1.0:
-  version "1.1.0"
-  resolved "http://registry.npm.360es.cn/d3-selection/download/d3-selection-1.1.0.tgz#1998684896488f839ca0372123da34f1d318809c"
+d3-selection@1.3.0:
+  version "1.3.0"
+  resolved "http://registry.npm.360es.cn/d3-selection/download/d3-selection-1.3.0.tgz#d53772382d3dc4f7507bfb28bcd2d6aed2a0ad6d"
 
 d3-shape@1.2.0:
   version "1.2.0"
@@ -2237,9 +2235,9 @@ d3-time-format@2:
   dependencies:
     d3-time "1"
 
-d3-time-format@2.0.5:
-  version "2.0.5"
-  resolved "http://registry.npm.360es.cn/d3-time-format/download/d3-time-format-2.0.5.tgz#9d7780204f7c9119c9170b1a56db4de9a8af972e"
+d3-time-format@2.1.1:
+  version "2.1.1"
+  resolved "http://registry.npm.360es.cn/d3-time-format/download/d3-time-format-2.1.1.tgz#85b7cdfbc9ffca187f14d3c456ffda268081bb31"
   dependencies:
     d3-time "1"
 
@@ -2247,17 +2245,17 @@ d3-time@1:
   version "1.0.10"
   resolved "http://registry.npm.360es.cn/d3-time/download/d3-time-1.0.10.tgz#8259dd71288d72eeacfd8de281c4bf5c7393053c"
 
-d3-time@1.0.7:
-  version "1.0.7"
-  resolved "http://registry.npm.360es.cn/d3-time/download/d3-time-1.0.7.tgz#94caf6edbb7879bb809d0d1f7572bc48482f7270"
+d3-time@1.0.8:
+  version "1.0.8"
+  resolved "http://registry.npm.360es.cn/d3-time/download/d3-time-1.0.8.tgz#dbd2d6007bf416fe67a76d17947b784bffea1e84"
 
 d3-timer@1:
   version "1.0.9"
   resolved "http://registry.npm.360es.cn/d3-timer/download/d3-timer-1.0.9.tgz#f7bb8c0d597d792ff7131e1c24a36dd471a471ba"
 
-d3-timer@1.0.6:
-  version "1.0.6"
-  resolved "http://registry.npm.360es.cn/d3-timer/download/d3-timer-1.0.6.tgz#4044bf15d7025c06ce7d1149f73cd07b54dbd784"
+d3-timer@1.0.7:
+  version "1.0.7"
+  resolved "http://registry.npm.360es.cn/d3-timer/download/d3-timer-1.0.7.tgz#df9650ca587f6c96607ff4e60cc38229e8dd8531"
 
 d3-transition@1:
   version "1.1.3"
@@ -2270,9 +2268,9 @@ d3-transition@1:
     d3-selection "^1.1.0"
     d3-timer "1"
 
-d3-transition@1.1.0:
-  version "1.1.0"
-  resolved "http://registry.npm.360es.cn/d3-transition/download/d3-transition-1.1.0.tgz#cfc85c74e5239324290546623572990560c3966f"
+d3-transition@1.1.1:
+  version "1.1.1"
+  resolved "http://registry.npm.360es.cn/d3-transition/download/d3-transition-1.1.1.tgz#d8ef89c3b848735b060e54a39b32aaebaa421039"
   dependencies:
     d3-color "1"
     d3-dispatch "1"
@@ -2285,9 +2283,9 @@ d3-voronoi@1.1.2:
   version "1.1.2"
   resolved "http://registry.npm.360es.cn/d3-voronoi/download/d3-voronoi-1.1.2.tgz#1687667e8f13a2d158c80c1480c5a29cb0d8973c"
 
-d3-zoom@1.5.0:
-  version "1.5.0"
-  resolved "http://registry.npm.360es.cn/d3-zoom/download/d3-zoom-1.5.0.tgz#8417de9a077f98f9ce83b1998efb8ee12b4db26e"
+d3-zoom@1.7.1:
+  version "1.7.1"
+  resolved "http://registry.npm.360es.cn/d3-zoom/download/d3-zoom-1.7.1.tgz#02f43b3c3e2db54f364582d7e4a236ccc5506b63"
   dependencies:
     d3-dispatch "1"
     d3-drag "1"
@@ -2299,40 +2297,40 @@ d3.js@^0.0.2-security:
   version "0.0.2-security"
   resolved "http://registry.npm.360es.cn/d3.js/download/d3.js-0.0.2-security.tgz#70b602e9fe3eb6f35bdff355ff58cd588d85ca9a"
 
-d3@4.10.0:
-  version "4.10.0"
-  resolved "http://registry.npm.360es.cn/d3/download/d3-4.10.0.tgz#0bcca3a3b614e2fd45b1b5bd0b9164d57352a862"
+d3@^4.10.0:
+  version "4.13.0"
+  resolved "http://registry.npm.360es.cn/d3/download/d3-4.13.0.tgz#ab236ff8cf0cfc27a81e69bf2fb7518bc9b4f33d"
   dependencies:
-    d3-array "1.2.0"
+    d3-array "1.2.1"
     d3-axis "1.0.8"
     d3-brush "1.0.4"
     d3-chord "1.0.4"
     d3-collection "1.0.4"
     d3-color "1.0.3"
     d3-dispatch "1.0.3"
-    d3-drag "1.1.1"
-    d3-dsv "1.0.5"
+    d3-drag "1.2.1"
+    d3-dsv "1.0.8"
     d3-ease "1.0.3"
-    d3-force "1.0.6"
-    d3-format "1.2.0"
-    d3-geo "1.6.4"
+    d3-force "1.1.0"
+    d3-format "1.2.2"
+    d3-geo "1.9.1"
     d3-hierarchy "1.1.5"
-    d3-interpolate "1.1.5"
+    d3-interpolate "1.1.6"
     d3-path "1.0.5"
     d3-polygon "1.0.3"
     d3-quadtree "1.0.3"
     d3-queue "3.0.7"
     d3-random "1.1.0"
-    d3-request "1.0.5"
-    d3-scale "1.0.6"
-    d3-selection "1.1.0"
+    d3-request "1.0.6"
+    d3-scale "1.0.7"
+    d3-selection "1.3.0"
     d3-shape "1.2.0"
-    d3-time "1.0.7"
-    d3-time-format "2.0.5"
-    d3-timer "1.0.6"
-    d3-transition "1.1.0"
+    d3-time "1.0.8"
+    d3-time-format "2.1.1"
+    d3-timer "1.0.7"
+    d3-transition "1.1.1"
     d3-voronoi "1.1.2"
-    d3-zoom "1.5.0"
+    d3-zoom "1.7.1"
 
 d@1:
   version "1.0.0"
@@ -2649,6 +2647,12 @@ ecc-jsbn@~0.1.1:
   dependencies:
     jsbn "~0.1.0"
     safer-buffer "^2.1.0"
+
+echarts@^4.2.0-rc.1:
+  version "4.2.0-rc.2"
+  resolved "http://registry.npm.360es.cn/echarts/download/echarts-4.2.0-rc.2.tgz#6a98397aafa81b65cbf0bc15d9afdbfb244df91e"
+  dependencies:
+    zrender "4.0.5"
 
 editorconfig@^0.15.0:
   version "0.15.0"
@@ -4943,10 +4947,6 @@ lodash._stack@^4.0.0:
   version "4.1.3"
   resolved "http://registry.npm.360es.cn/lodash._stack/download/lodash._stack-4.1.3.tgz#751aa76c1b964b047e76d14fc72a093fcb5e2dd0"
 
-lodash.camelcase@^4.3.0:
-  version "4.3.0"
-  resolved "http://registry.npm.360es.cn/lodash.camelcase/download/lodash.camelcase-4.3.0.tgz#b28aa6288a2b9fc651035c7711f65ab6190331a6"
-
 lodash.clone@3.0.3:
   version "3.0.3"
   resolved "http://registry.npm.360es.cn/lodash.clone/download/lodash.clone-3.0.3.tgz#84688c73d32b5a90ca25616963f189252a997043"
@@ -5022,7 +5022,7 @@ lodash.uniq@^4.5.0:
   version "4.5.0"
   resolved "http://registry.npm.360es.cn/lodash.uniq/download/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
 
-lodash@4.x, lodash@^4.13.1, lodash@^4.17.10, lodash@^4.17.2, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.2.0, lodash@^4.3.0:
+lodash@4.x, lodash@^4.13.1, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.2, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.2.0, lodash@^4.3.0:
   version "4.17.11"
   resolved "http://registry.npm.360es.cn/lodash/download/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
 
@@ -6259,7 +6259,7 @@ postcss-zindex@^2.0.1:
     postcss "^5.0.4"
     uniqs "^2.0.0"
 
-postcss@^5.0.10, postcss@^5.0.11, postcss@^5.0.12, postcss@^5.0.13, postcss@^5.0.14, postcss@^5.0.16, postcss@^5.0.2, postcss@^5.0.4, postcss@^5.0.5, postcss@^5.0.6, postcss@^5.0.8, postcss@^5.2.16:
+postcss@^5.0.10, postcss@^5.0.11, postcss@^5.0.12, postcss@^5.0.13, postcss@^5.0.14, postcss@^5.0.16, postcss@^5.0.2, postcss@^5.0.4, postcss@^5.0.5, postcss@^5.0.8, postcss@^5.2.16:
   version "5.2.18"
   resolved "http://registry.npm.360es.cn/postcss/download/postcss-5.2.18.tgz#badfa1497d46244f6390f58b319830d9107853c5"
   dependencies:
@@ -6268,7 +6268,7 @@ postcss@^5.0.10, postcss@^5.0.11, postcss@^5.0.12, postcss@^5.0.13, postcss@^5.0
     source-map "^0.5.6"
     supports-color "^3.2.3"
 
-postcss@^6.0.0, postcss@^6.0.1, postcss@^6.0.17, postcss@^6.0.8:
+postcss@^6.0.0, postcss@^6.0.1, postcss@^6.0.17, postcss@^6.0.23, postcss@^6.0.8:
   version "6.0.23"
   resolved "http://registry.npm.360es.cn/postcss/download/postcss-6.0.23.tgz#61c82cc328ac60e677645f979054eb98bc0e3324"
   dependencies:
@@ -7854,9 +7854,16 @@ vue-router@^3.0.1:
   version "3.0.1"
   resolved "http://registry.npm.360es.cn/vue-router/download/vue-router-3.0.1.tgz#d9b05ad9c7420ba0f626d6500d693e60092cc1e9"
 
-vue-style-loader@^3.0.0, vue-style-loader@^3.0.1:
+vue-style-loader@^3.0.0:
   version "3.1.2"
   resolved "http://registry.npm.360es.cn/vue-style-loader/download/vue-style-loader-3.1.2.tgz#6b66ad34998fc9520c2f1e4d5fa4091641c1597a"
+  dependencies:
+    hash-sum "^1.0.2"
+    loader-utils "^1.0.2"
+
+vue-style-loader@^4.1.2:
+  version "4.1.2"
+  resolved "http://registry.npm.360es.cn/vue-style-loader/download/vue-style-loader-4.1.2.tgz#dedf349806f25ceb4e64f3ad7c0a44fba735fcf8"
   dependencies:
     hash-sum "^1.0.2"
     loader-utils "^1.0.2"
@@ -8256,3 +8263,7 @@ yauzl@2.4.1:
   resolved "http://registry.npm.360es.cn/yauzl/download/yauzl-2.4.1.tgz#9528f442dab1b2284e58b4379bb194e22e0c4005"
   dependencies:
     fd-slicer "~1.0.1"
+
+zrender@4.0.5:
+  version "4.0.5"
+  resolved "http://registry.npm.360es.cn/zrender/download/zrender-4.0.5.tgz#6e8f738971ce2cd624aac82b2156729b1c0e5a82"
