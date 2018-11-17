@@ -8,7 +8,7 @@ import index from '@/pages/echarts/index/index'
 import drag from '@/pages/drag/drag'
 import jsPlumb from '@/pages/jsPlumb/index'
 import flow from '@/pages/jsPlumb/flow'
-import feng from '@/pages/jsPlumb/feng'
+import yuyan from '@/pages/jsPlumb/yuyan'
 
 Vue.use(Router)
 
@@ -45,9 +45,9 @@ export default new Router({
       component: flow
     },
     {
-      path: '/jsplumb/feng',
-      name: 'feng',
-      component: feng
+      path: '/jsplumb/yuyan',
+      name: 'yuyan',
+      component: yuyan
     }
   ]
 })
