@@ -9,7 +9,7 @@ import drag from '@/pages/drag/drag'
 import jsPlumb from '@/pages/jsPlumb/index'
 import flow from '@/pages/jsPlumb/flow'
 import feng from '@/pages/jsPlumb/feng'
-
+import yuyan from '@/pages/jsPlumb/yuyan'
 Vue.use(Router)
 
 export default new Router({
@@ -43,6 +43,11 @@ export default new Router({
       path: '/jsplumb/flow',
       name: 'flow',
       component: flow
+    },
+    {
+      path: '/jsplumb/yuyan',
+      name: 'yuyan',
+      component: yuyan
     },
     {
       path: '/jsplumb/feng',
