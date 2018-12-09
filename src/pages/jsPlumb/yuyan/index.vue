@@ -1,24 +1,21 @@
 <template>
   <div class="flowChart">
-    <el-button type="primary" @click='designModelChange'>{{designModel}}</el-button>
+    <sti-button @click='designModelChange'>{{designModel}}</sti-button>
     <div v-if="getDesignModel">
-      <el-button type="primary" plain @click='addLineChange'>{{addLine}}</el-button>
-      <el-button type="primary" plain @click='addNode'>添加</el-button>
+      <sti-button @click='addLineChange'>{{addLine}}</sti-button>
     </div>
     <div class="flowChart-flow">
-      <div class="flowChart-item"
-        :id="item.id" v-for="(item,index) in flowData" :key="index"
-        :style="{'left': item.left, 'top': item.top,}">{{item.name}}</div>
+        <div class="flowChart-item"
+            :id="item.id" v-for="(item,index) in flowData"
+            :key="index"
+            :style="{'left': item.left, 'top': item.top,}">
+            {{item.name}}
+        </div>
     </div>
+    <p>资料参考：<a href="https://jsplumbtoolkit.com" target="_blank">https://jsplumbtoolkit.com</a></p>
   </div>
 </template>
 <script>
-const anchors = {
-  '50': 'TopCenter',
-  '105': 'RightMiddle',
-  '510': 'BottomCenter',
-  '05': 'LeftMiddle'
-}
 export default {
   data () {
     return {
@@ -27,7 +24,6 @@ export default {
       getDesignModel: false,
       addLine: '增加连线',
       getAddLine: true,
-      updateConnections: [],
       endPoints: [],
       flowData: [
         {
@@ -65,28 +61,62 @@ export default {
     }
   },
   mounted () {
-    this.init()
+    this.getData()
   },
   methods: {
+    // 获取数据
+    getData () {
+      this.$nextTick(() => {
+        this.init()
+      })
+    },
+    // 初始化
     init () {
       /* eslint-disable */
-      let self = this;
-      this.flowInstance = jsPlumb.getInstance();
-      console.log('开始')
-        this.flowData.forEach(item => {
-          item.target.forEach(target => {
-            this.flowInstance.connect({
-              source: item.id,
-              target: target.id,
-              detachable: false,
-              scope: 'flowScope',
-              cssClass: 'flowChart-line',
-              connector: ['Flowchart', { cornerRadius: 10, stub: 10 }],
-              anchors: target.anchors,
-              endpointStyle: { fill: 'none' }
-            });
-          })   
-      }) 
+            let self = this;
+            console.log('开始')
+              jsPlumb.ready(() => {
+                console.log(this.flowData)
+                this.flowData.forEach(item => {
+                    item.target.forEach(target => {
+                      console.log(target)
+                      console.log(item.id)
+                      console.log(target.id)
+                      console.log(target.anchors)
+                        jsPlumb.connect({
+                          source: item.id,
+                          target: target.id,
+                          detachable: false,
+                          scope: 'flowScope',
+                          cssClass: 'flowChart-line',
+                          connector: ['Flowchart', { cornerRadius: 10, stub: 10 }],
+                          anchors: target.anchors,
+                          endpointStyle: { fill: 'none' }
+                        });
+                    })
+                });     
+            })
+              
+            // let self = this;
+            // this.flowInstance = jsPlumb.getInstance();
+            //   jsPlumb.ready(){
+            //   self.flowData.forEach(item =>{
+            //     item.target.forEach(target =>{
+            //       jsPlumb.connect({
+            //         source: item.id,
+            //         target: target.id,
+            //         anchors: target.anchors
+            //       })
+            //     })
+            //   })
+            // })
+            
+            
+        },
+        // 自定义模式开关
+        designModelChange() {
+
+        }
     },
     conversionData() {
       this.flowData.forEach(item => {
@@ -266,17 +296,17 @@ export default {
   }
 }
 </script>
-<style lang="less">
+<style >
 .flowChart {
     width: 100%;
-    height: 600px;
-    border: 1px solid red;
-    &> .flowChart-flow {
-        position: relative;
+    height: 80%;
+}
+.flowChart .flowChart-flow{
+    position: relative;
         width: 100%;
         height: 100%;
-        border: 1px solid red;
-    }
+}
+
     .flowChart-item {
         position: absolute;
         background: #3464e2;
@@ -284,27 +314,17 @@ export default {
         padding: 10px;
         border-radius: 22px;
     }
-    .flowChart-line {
-        &> path:first-child {
+    .flowChart-line path {
             stroke: #3464e2;
             stroke-opacity: 0.2;
             stroke-width: 7px;
-        }
     }
-    .flowChart-active-line {
-        path {
+    .flowChart-active-line path {
             stroke-dasharray: 1 20;
             stroke-dashoffset: 10000;
             animation: draw 100s linear infinite;
             stroke-linecap: round;
             stroke: #3464e2;
             stroke-width: 7px;
-        }
     }
-    @keyframes draw{
-        100%{
-            stroke-dashoffset: 0;
-        }
-    }
-}
 </style>

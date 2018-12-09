@@ -20,22 +20,33 @@ module.exports = {
         children: [
           '/home/',
         ]
-      },{
+      },
+      {
         title:'MarkDown',
         children: [
           '/MarkDown/',
         ]
-      },{
+      },
+      {
+        title:'js相关',
+        children:[
+          '/js/属性方法/',
+          '/js/概念相关/'
+        ]
+      },
+      {
         title:'Vue相关',
         children:[
           '/vue/drag/',
         ]
-      },{
+      },
+      {
         title:'D3.js基础',
         children:[
           '/d3v5/',
         ]
-      },{
+      },
+      {
         title:'ECMAScript',
         children:[
           '/ECMAScript/ES7/',
