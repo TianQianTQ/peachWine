@@ -52,6 +52,12 @@ module.exports = {
           '/ECMAScript/ES7/',
           '/ECMAScript/ES8/'
         ]
+      },
+      {
+        title:'总结',
+        children:[
+          '/summary/2018年终总结/'
+        ]
       }
     ],
 
