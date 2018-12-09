@@ -22,7 +22,7 @@ const anchors = {
 export default {
   data () {
     return {
-      flowInstance: {},
+      flowInstance: {}, // jsplumb实例对象
       designModel: '打开自定义模式',
       getDesignModel: false,
       addLine: '增加连线',
@@ -71,12 +71,11 @@ export default {
     init () {
       /* eslint-disable */
       let self = this;
-      // this.flowInstance = jsPlumb.getInstance();
+      this.flowInstance = jsPlumb.getInstance();
       console.log('开始')
-      jsPlumb.ready(() => {
         this.flowData.forEach(item => {
           item.target.forEach(target => {
-            jsPlumb.connect({
+            this.flowInstance.connect({
               source: item.id,
               target: target.id,
               detachable: false,
@@ -86,174 +85,185 @@ export default {
               anchors: target.anchors,
               endpointStyle: { fill: 'none' }
             });
-          })
-        });     
+          })   
       }) 
     },
-        // 开关
-      designModelChange() {
-          this.getDesignModel = !this.getDesignModel
-          if (this.getDesignModel) {
-              this.designModel = '关闭自定义模式'
-              this.addEnable()
-          } else {
-              this.designModel = '打开自定义模式'
-              if (this.getAddLine) {
-                  this.addDisable()
-              } else {
-                  this.deleteDisable()
-              }
-              this.$confirm('是否保存当前布局?', '提示', {
-                  confirmButtonText: '确定',
-                  cancelButtonText: '取消',
-                  type: 'warning'
-              }).then(() => {
-                  console.log('保存')
-                  this.$message({
-                      type: 'success',
-                      message: '删除成功!'
-                  });
-              }).catch(() => {
-                  console.log('取消')
-                  jsPlumb.reset();
-                  this.getData()
-                  this.$message({
-                      type: 'info',
-                      message: '已取消删除'
-                  });          
-              });
-          }
-      },
-      // 连线操作
-      addLineChange() {
-          if(this.getAddLine){
-              this.addLine = '删除连线'
-          } else {
-              this.addLine = '增加连线'
-          }
-          this.getAddLine = !this.getAddLine
-      },
-      addNode() {
-          this.flowData.push({
-              id: `flow-${this.flowData.length + 1}`,
-              name: `流程图节点${this.flowData.length + 1}`,
-              left: '0',
-              top: '0',
-              target: []
-          })
-      },
-      addEnable() {
-          let self = this;
-          /* eslint-disable */
-          this.endPoints = [];
-          this.flowData.forEach(item => {
-              let endpointOptions = {
-                  endpoint: 'Dot',
-                  isSource: true,
-                  isTarget: true ,
-                  maxConnections: -1,
-                  connector: ['Flowchart', { cornerRadius: 10, stub: 10 }],
-                  connectorClass: 'flowChart-line'
-              };
-              jsPlumb.draggable(item.id,{cintainment:'parent'});
-              this.endPoints.push(jsPlumb.addEndpoint(item.id, { anchor: 'TopCenter' }, endpointOptions));
-              this.endPoints.push(jsPlumb.addEndpoint(item.id, { anchor: 'BottomCenter' }, endpointOptions));
-              this.endPoints.push(jsPlumb.addEndpoint(item.id, { anchor: 'RightMiddle' }, endpointOptions));
-              this.endPoints.push(jsPlumb.addEndpoint(item.id, { anchor: 'LeftMiddle' }, endpointOptions));
+    conversionData() {
+      this.flowData.forEach(item => {
+        let connections = this.flowInstance.getConnections({scope:'flowScope', source: item.id})
+        connections.forEach(connection => {
+          
+        })
+      })
+    },
+    // 开关
+    designModelChange() {
+      this.getDesignModel = !this.getDesignModel
+      if (this.getDesignModel) {
+        this.designModel = '关闭自定义模式'
+        this.addEnable()
+      } else {
+        this.designModel = '打开自定义模式'
+        if (this.getAddLine) {
+          this.addDisable()
+        } else {
+          this.deleteDisable()
+        }
+        this.$confirm('是否保存当前布局?', '提示', {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+          type: 'warning'
+        }).then(() => {
+          // 保存当前连线状态
+          this.$message({
+              type: 'success',
+              message: '保存成功!'
           });
-
-          // 监听添加元素
-          jsPlumb.bind('connection', (info) => {
-              let sourceKey = info.sourceEndpoint.anchor.x * 10 + '' + info.sourceEndpoint.anchor.y * 10;
-              let targetKey = info.targetEndpoint.anchor.x * 10 + '' + info.targetEndpoint.anchor.y * 10;
-              this.updateConnections.push({
-                  sourceId: info.sourceId,
-                  targetId: info.targetId,
-                  anchors: [anchors[sourceKey], anchors[targetKey]]
-              })
-          });
-      },
-      // 变化节点删除端点
-      addDisable: function() {
-          /* eslint-disable */
-          jsPlumb.unbind('connection');
-          this.updateConnections.forEach(item => {
-              jsPlumb.connect({
-                  source: item.sourceId,
-                  target: item.targetId,
-                  detachable: false,
-                  scope: 'flowScope',
-                  cssClass: 'flowChart-line',
-                  connector: ['Flowchart', { cornerRadius: 10, stub: 10 }],
-                  anchors: item.anchors,
-                  endpointStyle: { fill: 'none' }
-              })
-          })
-          this.endPoints.forEach(item => {
-              jsPlumb.deleteEndpoint(item);
-          })
-      },
-      // 端点可分
-      deleteEnable: function() {
-          jsPlumb.getConnections({scope:"flowScope"}).forEach(connection => {
-              let sourceKey = connection.endpoints[0].anchor.x * 10 + '' + connection.endpoints[0].anchor.y * 10;
-              let targetKey = connection.endpoints[1].anchor.x * 10 + '' + connection.endpoints[1].anchor.y * 10;
-              jsPlumb.detach(connection);
-              jsPlumb.connect({
-                  source: connection.sourceId,
-                  target: connection.targetId,
-                  detachable: true,
-                  scope: 'flowScope',
-                  cssClass: 'flowChart-line',
-                  connector: ['Flowchart', { cornerRadius: 10, stub: 10 }],
-                  anchors: [anchors[sourceKey], anchors[targetKey]]
-              });
-          })
-      },
-      // 端点不可分
-      deleteDisable: function() {
-          jsPlumb.getConnections({scope:"flowScope"}).forEach(connection => {
-              let sourceKey = connection.endpoints[0].anchor.x * 10 + '' + connection.endpoints[0].anchor.y * 10;
-              let targetKey = connection.endpoints[1].anchor.x * 10 + '' + connection.endpoints[1].anchor.y * 10;
-              jsPlumb.detach(connection);
-              jsPlumb.connect({
-                  source: connection.sourceId,
-                  target: connection.targetId,
-                  detachable: false,
-                  scope: 'flowScope',
-                  cssClass: 'flowChart-line',
-                  connector: ['Flowchart', { cornerRadius: 10, stub: 10 }],
-                  anchors: [anchors[sourceKey], anchors[targetKey]],
-                  endpointStyle: { fill: 'none' }
-              });
-          })
-      },
-      toggleAnimation: function(id) {
-            let self = this;
-          let connects= jsPlumb.getConnections({scope: "active", source: id});
-          if (connects.length > 0) {
-              connects.forEach(connection => {
-                  jsPlumb.detach(connection);
-              })
-              return;
-          }
-          let node = this.flowData.find(item => {
-              return item.id == id;
-          })
-          node.target.forEach(target => {
-              jsPlumb.connect({
-                  source: node.id,
-                  target: target.id,
-                  detachable: false,
-                  cssClass: 'flowChart-active-line',
-                  scope: 'active',
-                  connector: ['Flowchart', { cornerRadius: 10, stub: 10 }],
-                  anchors: target.anchors,
-                  endpointStyle: { fill: 'none' }
-              });
-          })
+        }).catch(() => {
+          console.log('取消')
+          this.flowInstance.reset();
+          this.init()
+          this.$message({
+            type: 'info',
+            message: '已取消删除'
+          });          
+        });
       }
+    },
+    // 连线操作
+    addLineChange() {
+      if(this.getAddLine){
+        this.addLine = '删除连线'
+        this.addDisable();
+        this.deleteEnable();
+      } else {
+        this.addLine = '增加连线'
+        this.deleteDisable();
+        this.addEnable();
+      }
+      this.getAddLine = !this.getAddLine
+    },
+    addNode() {
+      this.flowData.push({
+        id: `flow-${this.flowData.length + 1}`,
+        name: `流程图节点${this.flowData.length + 1}`,
+        left: '0',
+        top: '0',
+        target: []
+      })
+    },
+    addEnable() {
+      let self = this;
+      /* eslint-disable */
+      this.endPoints = [];
+      this.flowData.forEach(item => {
+        let endpointOptions = {
+          endpoint: 'Dot',
+          isSource: true,
+          isTarget: true ,
+          maxConnections: -1,
+          connector: ['Flowchart', { cornerRadius: 10, stub: 10 }],
+          connectorClass: 'flowChart-line'
+        };
+        this.flowInstance.draggable(item.id,{cintainment:'parent'});
+        this.endPoints.push(this.flowInstance.addEndpoint(item.id, { anchor: 'TopCenter' }, endpointOptions));
+        this.endPoints.push(this.flowInstance.addEndpoint(item.id, { anchor: 'BottomCenter' }, endpointOptions));
+        this.endPoints.push(this.flowInstance.addEndpoint(item.id, { anchor: 'RightMiddle' }, endpointOptions));
+        this.endPoints.push(this.flowInstance.addEndpoint(item.id, { anchor: 'LeftMiddle' }, endpointOptions));
+      });
+
+      // 监听添加元素
+      this.flowInstance.bind('connection', (info) => {
+        let sourceKey = info.sourceEndpoint.anchor.x * 10 + '' + info.sourceEndpoint.anchor.y * 10;
+        let targetKey = info.targetEndpoint.anchor.x * 10 + '' + info.targetEndpoint.anchor.y * 10;
+        this.updateConnections.push({
+          sourceId: info.sourceId,
+          targetId: info.targetId,
+          anchors: [anchors[sourceKey], anchors[targetKey]]
+        })
+      });
+    },
+      // 变化节点删除端点
+    addDisable: function() {
+      /* eslint-disable */
+      this.flowInstance.unbind('connection');
+      this.updateConnections.forEach(item => {
+        this.flowInstance.connect({
+          source: item.sourceId,
+          target: item.targetId,
+          detachable: false,
+          scope: 'flowScope',
+          cssClass: 'flowChart-line',
+          connector: ['Flowchart', { cornerRadius: 10, stub: 10 }],
+          anchors: item.anchors,
+          endpointStyle: { fill: 'none' }
+        })
+      })
+      this.endPoints.forEach(item => {
+        this.flowInstance.deleteEndpoint(item);
+      })
+    },
+      // 端点可分
+    deleteEnable: function() {
+      this.flowInstance.getConnections({scope:"flowScope"}).forEach(connection => {
+        let sourceKey = connection.endpoints[0].anchor.x * 10 + '' + connection.endpoints[0].anchor.y * 10;
+        let targetKey = connection.endpoints[1].anchor.x * 10 + '' + connection.endpoints[1].anchor.y * 10;
+        this.flowInstance.detach(connection);
+        this.flowInstance.connect({
+          source: connection.sourceId,
+          target: connection.targetId,
+          detachable: true,
+          scope: 'flowScope',
+          cssClass: 'flowChart-line',
+          connector: ['Flowchart', { cornerRadius: 10, stub: 10 }],
+          anchors: [anchors[sourceKey], anchors[targetKey]]
+        });
+      })
+    },
+      // 端点不可分
+    deleteDisable: function() {
+      this.flowInstance.getConnections({scope:"flowScope"}).forEach(connection => {
+        let sourceKey = connection.endpoints[0].anchor.x * 10 + '' + connection.endpoints[0].anchor.y * 10;
+        let targetKey = connection.endpoints[1].anchor.x * 10 + '' + connection.endpoints[1].anchor.y * 10;
+        this.flowInstance.detach(connection);
+        this.flowInstance.connect({
+          source: connection.sourceId,
+          target: connection.targetId,
+          detachable: false,
+          scope: 'flowScope',
+          cssClass: 'flowChart-line',
+          connector: ['Flowchart', { cornerRadius: 10, stub: 10 }],
+          anchors: [anchors[sourceKey], anchors[targetKey]],
+          endpointStyle: { fill: 'none' }
+        });
+      })
+    },
+    toggleAnimation: function(id) {
+      let self = this;
+      let connects= this.flowInstance.getConnections({scope: "active", source: id});
+      if (connects.length > 0) {
+        connects.forEach(connection => {
+          this.flowInstance.detach(connection);
+        })
+        return;
+      }
+      let node = this.flowData.find(item => {
+        return item.id == id;
+      })
+      node.target.forEach(target => {
+        this.flowInstance.connect({
+          source: node.id,
+          target: target.id,
+          detachable: false,
+          cssClass: 'flowChart-active-line',
+          scope: 'active',
+          connector: ['Flowchart', { cornerRadius: 10, stub: 10 }],
+          anchors: target.anchors,
+          endpointStyle: { fill: 'none' }
+        });
+      })
     }
+  }
 }
 </script>
 <style lang="less">
