@@ -1,6 +1,8 @@
 module.exports = {
   title:'Hello 伊人笑桃花酒',
   description:'用文字记录路过的风景',
+  base: '/',
+  dest: './docs/.vuepress/dist',
   themeConfig: {
     nav:[
       { text: 'GitHub', link:'https://github.com/TianQianTQ'},
@@ -51,6 +53,12 @@ module.exports = {
         children:[
           '/ECMAScript/ES7/',
           '/ECMAScript/ES8/'
+        ]
+      },
+      {
+        title:'总结',
+        children:[
+          '/summary/2018年终总结/'
         ]
       }
     ],
