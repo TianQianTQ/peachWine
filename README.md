@@ -1,6 +1,6 @@
 # test
 
-> A Vue.js project
+> A VuePress project
 
 ## Build Setup
 
@@ -25,4 +25,6 @@ npm run e2e
 
 # run all tests
 npm test
-```
+
+# run vuePress
+npm run docs:dev
