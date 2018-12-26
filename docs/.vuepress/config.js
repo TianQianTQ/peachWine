@@ -58,7 +58,8 @@ module.exports = {
       {
         title:'总结',
         children:[
-          '/summary/2018年终总结/'
+          '/summary/2018年终总结/',
+          '/summary/态势宝感悟/'
         ]
       }
     ],
