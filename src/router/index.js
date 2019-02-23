@@ -6,9 +6,8 @@ import forceDirectedGraph from '@/pages/d3/forceDirectedGraph/index'
 import index from '@/pages/echarts/index/index'
 
 import drag from '@/pages/drag/drag'
-import jsPlumb from '@/pages/jsPlumb/index'
+import jsPlumb from '@/pages/jsPlumb/index/index'
 import flow from '@/pages/jsPlumb/flow'
-import yuyan from '@/pages/jsPlumb/yuyan'
 
 Vue.use(Router)
 
@@ -43,11 +42,6 @@ export default new Router({
       path: '/jsplumb/flow',
       name: 'flow',
       component: flow
-    },
-    {
-      path: '/jsplumb/yuyan',
-      name: 'yuyan',
-      component: yuyan
     }
   ]
 })
