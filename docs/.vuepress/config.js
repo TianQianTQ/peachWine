@@ -40,6 +40,7 @@ module.exports = {
         title:'Vue相关',
         children:[
           '/vue/drag/',
+          '/vue/方法比较/'
         ]
       },
       {

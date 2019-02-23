@@ -1,7 +1,7 @@
 ---
 title： vue拖拽介绍
 ---
-## 基本方法介绍
+## vue拖拽介绍
 
 **基本使用方法同HTML5**
 [w3school](http://www.w3school.com.cn/html5/html_5_draganddrop.asp)
