@@ -8,6 +8,7 @@ import index from '@/pages/echarts/index/index'
 import drag from '@/pages/drag/drag'
 import jsPlumb from '@/pages/jsPlumb/index/index'
 import flow from '@/pages/jsPlumb/flow'
+import processEngine from '@/pages/jsPlumb/processEngine/index'
 
 Vue.use(Router)
 
@@ -42,6 +43,11 @@ export default new Router({
       path: '/jsplumb/flow',
       name: 'flow',
       component: flow
+    },
+    {
+      path: '/jsPlumb/processEngine',
+      name: 'processEngine',
+      component: processEngine
     }
   ]
 })
