@@ -43,7 +43,7 @@
     "copy-webpack-plugin": "^4.0.1",
     "cross-spawn": "^5.0.1",
     "css-loader": "^1.0.1",
-    "d3": "^4.10.0",
+    "d3": "^7.6.1",
     "echarts": "^4.2.0-rc.1",
     "eslint": "^4.15.0",
     "eslint-config-standard": "^10.2.1",
